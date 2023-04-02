@@ -5,7 +5,7 @@ import 'main.dart' as app;
 
 void main() {
   group('Testing App Performance Tests', () {
-    final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized() as IntegrationTestWidgetsFlutterBinding;
+    final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
     binding.framePolicy = LiveTestWidgetsFlutterBindingFramePolicy.fullyLive;
 
@@ -23,9 +23,12 @@ void main() {
       expect(releaseTextFinder1, findsOneWidget);
 
       // checking values
-      expect((titleTextFinder1.evaluate().single.widget as Text).data, 'Fight Club');
-      expect((overviewTextFinder1.evaluate().single.widget as Text).data, 'Overview 1');
-      expect((releaseTextFinder1.evaluate().single.widget as Text).data, '1999-10-12');
+      expect((titleTextFinder1.evaluate().single.widget as Text).data,
+          'Fight Club');
+      expect((overviewTextFinder1.evaluate().single.widget as Text).data,
+          'Overview 1');
+      expect((releaseTextFinder1.evaluate().single.widget as Text).data,
+          '1999-10-12');
 
       // Movie 2
       final titleTextFinder2 = find.byKey(Key('2-title'));
@@ -37,9 +40,12 @@ void main() {
       expect(releaseTextFinder2, findsOneWidget);
 
       // checking values
-      expect((titleTextFinder2.evaluate().single.widget as Text).data, 'Fight Club 2');
-      expect((overviewTextFinder2.evaluate().single.widget as Text).data, 'Overview 2');
-      expect((releaseTextFinder2.evaluate().single.widget as Text).data, '1999-10-20');
+      expect((titleTextFinder2.evaluate().single.widget as Text).data,
+          'Fight Club 2');
+      expect((overviewTextFinder2.evaluate().single.widget as Text).data,
+          'Overview 2');
+      expect((releaseTextFinder2.evaluate().single.widget as Text).data,
+          '1999-10-20');
     });
   });
 }
